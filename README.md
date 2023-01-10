@@ -1,2 +1,3 @@
 # Leetboard
-Leetcode Leaderboard for students or friends!
+
+### Leetcode leaderboard for students and friends.

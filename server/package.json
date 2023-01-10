@@ -1,0 +1,23 @@
+{
+  "name": "leetboard",
+  "version": "1.0.0",
+  "description": "Leetcode leaderboard",
+  "main": "index.js",
+  "scripts": {
+    "test": "start"
+  },
+  "repository": {
+    "type": "git",
+    "url": "leetboard"
+  },
+  "keywords": [
+    "leetcode",
+    "leaderboard",
+    "leetboard"
+  ],
+  "author": "Utkarsh Uppal",
+  "license": "UNLICENSED",
+  "dependencies": {
+    "express": "^4.18.2"
+  }
+}
