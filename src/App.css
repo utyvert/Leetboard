@@ -1,7 +1,31 @@
 .App {
   text-align: center;
+  display: flex;
+  overflow: hidden;
+  /* width: 100vw; */
+}
+
+body {
+  /* background-color: white; */
+  margin: auto;
 }
 
 * {
   font-family: 'Cabin', sans-serif;
+}
+
+.horizontal-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.LeftNavbar {
+  display: flex;
+  flex-direction: column;
+  right: auto;
+  height: 100vh;
+  /* background-color: #f5f5f5; */
+  padding: 0 20px;
 }

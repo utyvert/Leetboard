@@ -1,27 +1,42 @@
 const express = require('express');
+const path = require('path');
 const app = express();
+const mongoose = require('mongoose');
+const cookieParser = require('cookie-parser');
+
+const userController = require('./controllers/userController');
+const authenticationController = require('./controllers/authenticationController');
+
+
+const PORT = process.env.PORT || 3001;
+
+const mongoURI = process.env.NODE_ENV = 'mongodb+srv://utkarshuppal:diamond123@leetboard.nezoyd9.mongodb.net/?retryWrites=true&w=majority'
+mongoose.set('strictQuery', true);
+mongoose.connect(mongoURI);
+
 
 app.use(express.json()); // to handle json data in request bodies
+app.use(express.urlencoded());
+app.use(cookieParser());
 
 // handle incoming GET request to '/'
-app.get('/', (req, res) => {
-    res.send('Hello from the server!');
+app.get('/' ,(req, res) => {
+
+    res.send('Hey there!');
 });
 
-// handle incoming GET request to '/users'
-app.get('/users', (req, res) => {
-    const users = [{ name: 'Alice' }, { name: 'Bob' }];
-    res.json(users);
+app.get('/leaderboard', userController.getAllUsers, (req, res) => {
+    console.log('working -- leaderboard')
+    const test = 'test'
+    res.locals.test = test;
+    res.status(200).json({test: test});
 });
 
-// handle incoming POST request to '/users'
-app.post('/users', (req, res) => {
-    const newUser = req.body;
-    console.log(`Received new user: ${newUser.name}`);
-    res.send('User created successfully!');
+
+
+app.listen(PORT, () => {
+    console.log(`Server running on port ${PORT}`);
 });
 
-const port = process.env.PORT || 3001;
-app.listen(port, () => {
-    console.log(`Server running on port ${port}`);
-});
+
+module.exports = app;

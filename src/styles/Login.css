@@ -1,0 +1,99 @@
+.Login {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-color: #f5f5f5;
+}
+
+/* Signup CSS */
+
+
+.Login label {
+  font-size: 14px;
+  color: #000000;
+}
+
+.Login {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-color: #f5f5f5;
+}
+
+input {
+  padding: 8px;
+}
+
+.fnln {
+  display: flex;
+  justify-content: center;
+  flex-direction: row;
+  align-items: center;
+  width: 100%;
+  margin-top: 15px;
+}
+
+.firstname {
+  margin-right: 10px;
+  text-align: left;
+}
+
+.firstname input, .lastname input {
+  height: 20px;
+}
+
+.Login input {
+  margin: 5px 0;
+  border-radius: 8px;
+  border: 1px solid #9b9b9b;
+}
+
+.lastname {
+  text-align: left;
+  margin-left: 10px;
+}
+
+.fnln input {
+  width: 122px;
+}
+
+.lc-username {
+  text-align: left;
+  margin: 5px 0;
+  border-radius: 8px;
+  margin-top: 25px;
+}
+
+.lc-username input {
+  width: 282px;
+  height: 20px;
+}
+
+.password {
+  text-align: left;
+  margin: 5px 0;
+  border-radius: 8px;
+  margin-top: 20px;
+}
+
+.password input {
+  width: 282px;
+  height: 20px;
+}
+
+.Login button {
+  margin: 25px 0;
+  border: none;
+  border-radius: 8px;
+  width: 300px;
+  height: 38px;
+  background-color: #000000;
+  color: white;
+  cursor: pointer;
+}
+
+/* SIGNUP CSS END */

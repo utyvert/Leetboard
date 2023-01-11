@@ -1,0 +1,58 @@
+.Leaderboard {
+  padding: 50px 200px 0px 50px;
+  display: flex;
+  flex-direction: column;
+  width: 80vw;
+  height: 100vh;
+  align-items: center;
+  justify-content: flex-start;
+  background-color: #f2f2f2;
+}
+
+.Leaderboard h1 {
+  font-family: 'Ubuntu', sans-serif;
+  color: #5F40B2;
+  justify-content: center;
+  align-items: center;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+th, td {
+  padding: 8px;
+  text-align: left;
+  border-bottom: 1px solid #ddd;
+
+}
+
+th {
+  background-color: #f2f2f2;
+}
+
+tr:hover {
+  background-color: #f5f5f5;
+}
+
+.rank {
+  width: 5%;
+}
+
+.username {
+  width: 10%;
+}
+
+.name {
+  width: 10%;
+}
+
+.total-solved {
+  width: 10%;
+}
+
+h1 {
+  text-align: center;
+  margin-bottom: 30px;
+}

@@ -1,0 +1,36 @@
+.LeftNavbar {
+  display: flex;
+  /* justify-content: center;  */
+  align-items: center; 
+  overflow-x: hidden;
+}
+
+.links {
+  display: flex; 
+  flex-direction: column; 
+  align-items: center; 
+  height: 100%; 
+}
+
+.LeftNavbar h1 a {
+  font-family: 'Ubuntu', sans-serif;
+  font-size: 24px;
+  color: #5F40B2
+}
+
+.LeftNavbar a {
+  margin-top: 15px;
+  color: #000; 
+  text-decoration: none; 
+  font-size: 1.2rem; 
+}
+
+.LeftNavbar a:hover {
+  color: #5F40B2; 
+}
+
+.LeftNavbar a.active {
+  font-weight: bold; 
+}
+
+
