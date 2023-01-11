@@ -25,11 +25,16 @@ app.get('/' ,(req, res) => {
     res.send('Hey there!');
 });
 
-app.get('/leaderboard', userController.getAllUsers, (req, res) => {
+app.get('/leaderboard', userController.fetch, userController.getAllUsers, (req, res) => {
     console.log('working -- leaderboard')
     const test = 'test'
     res.locals.test = test;
     res.status(200).json({test: test});
+});
+
+app.get('/create', userController.fetch, userController.createUser , (req, res) => {
+
+    res.status(200).json(res.locals.user);
 });
 
 

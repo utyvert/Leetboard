@@ -7,14 +7,14 @@ const bcrypt = require('bcryptjs');
 
 
 const userSchema = new Schema({
-  name: {type: String, required: true, unique: true},
+  fullname: {type: String, required: true, unique: true},
   leetcode: {type: String, required: true, unique: true},
   password: {type: String, required: true},
   totalSolved: {type: Number, required: true},
   easySolved: {type: Number, required: true},
   mediumSolved: {type: Number, required: true},
   hardSolved: {type: Number, required: true},
-  aceeptanceRate: {type: Number, required: true},
+  acceptanceRate: {type: Number, required: true},
   ranking: {type: Number, required: true},
 
 });

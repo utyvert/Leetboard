@@ -1,6 +1,8 @@
 const User = require('../models/User');
 const bcrypt = require('bcryptjs');
 const userController = {};
+const axios = require("axios");
+
 
 /**
 * getAllUsers - retrieve all users from the database and stores it into res.locals
@@ -21,23 +23,57 @@ userController.getAllUsers = (req, res, next) => {
 */
 userController.createUser = (req, res, next) => {
 
-  const {username, password} = req.body;
+  console.log(res.locals)
 
-  bcrypt.hash(password, 10)
+  bcrypt.hash('req.body.password', 10)
     .then((hash) => {
-      User.create({username: username, password: hash})
+      User.create({
+        name: res.locals.fullname, 
+        leetcode: res.locals.username,
+        password: hash,
+        totalSolved: res.locals.totalSolved,
+        easySolved: res.locals.easySolved,
+        mediumSolved: res.locals.mediumSolved,
+        hardSolved: res.locals.hardSolved,
+        acceptanceRate: res.locals.acceptanceRate,
+        ranking: res.locals.ranking
+      })
         .then(newUser => {
           res.locals.user = newUser;
-          next()
+          return next();
         })
         .catch(err => {
           res.redirect('/signup')
-          next(err)
+          return next(err);
         });
     })
     .catch(err => next(err));
 
 };
+
+userController.fetch = (req, res, next) => {
+
+  const {firstname, lastname, username, password} = req.body;
+  const fullname = firstname + ' ' + lastname;
+
+  res.locals.fullname = fullname;
+  res.locals.username = username;
+  res.locals.password = password;
+
+  axios.get(`https://leetcode-stats-api.herokuapp.com/${username}`)
+    .then(response => response.data)
+    .then(data => {
+      res.locals.totalSolved = data.totalSolved;
+      res.locals.easySolved = data.easySolved;
+      res.locals.mediumSolved = data.mediumSolved;
+      res.locals.hardSolved = data.hardSolved;
+      res.locals.acceptanceRate = data.acceptanceRate;
+      res.locals.ranking = data.ranking;
+      return next();
+    })
+    .catch(err => console.log(err));
+
+}
 
 /**
 * verifyUser - Obtain username and password from the request body, locate
