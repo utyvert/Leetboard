@@ -16,6 +16,7 @@ export default function Login() {
     <div className="signin-button">
       <button>Sign In</button>
     </div>
+    <h1>Signup page here</h1>
   </div>
   )
 }

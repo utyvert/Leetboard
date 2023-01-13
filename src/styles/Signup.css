@@ -1,22 +1,66 @@
 /* Signup CSS */
 
-
-.Signup label {
-  font-size: 14px;
-  color: #000000;
-}
-
 .Signup {
   display: flex;
   flex-direction: column;
-  justify-content: center;
   align-items: center;
-  height: 100vh;
+  padding: 2rem;
+}
+
+h1 {
+  color: #5F40B2;
+}
+
+.header {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   background-color: #f5f5f5;
+  padding: 1rem;
+  border-radius: 10px;
+}
+
+.header--text {
+  text-align: center;
+}
+
+.header h1 {
+  font-size: 2rem;
+  margin-bottom: 0.5rem;
+}
+
+.header h2 {
+  font-size: 1.5rem;
+  color: #666;
+}
+
+.profile-info {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 2rem;
+}
+
+.profile-info div {
+  width: 22%;
+  text-align: center;
+}
+
+.profile-info h3 {
+  font-size: 1.2rem;
+  margin-bottom: 0.5rem;
+}
+
+.profile-info h4 {
+  font-size: 1.5rem;
+  font-weight: bold;
 }
 
 input {
   padding: 8px;
+  margin: 5px 0;
+  border-radius: 8px;
+  border: 1px solid #9b9b9b;
 }
 
 .fnln {
@@ -28,24 +72,12 @@ input {
   margin-top: 15px;
 }
 
-.firstname {
-  margin-right: 10px;
+.firstname, .lastname {
   text-align: left;
 }
 
 .firstname input, .lastname input {
   height: 20px;
-}
-
-.Signup input {
-  margin: 5px 0;
-  border-radius: 8px;
-  border: 1px solid #9b9b9b;
-}
-
-.lastname {
-  text-align: left;
-  margin-left: 10px;
 }
 
 .fnln input {
@@ -77,7 +109,7 @@ input {
 }
 
 .Signup button {
-  margin: 25px 0;
+  margin: 10px 0;
   border: none;
   border-radius: 8px;
   width: 300px;
@@ -85,6 +117,16 @@ input {
   background-color: #000000;
   color: white;
   cursor: pointer;
+  transition: all 0.3s ease-in-out;
 }
 
-/* SIGNUP CSS END */
+.Signup button .expanded {
+  width: 350px;
+  height: 40px;
+  background-color: #5F40B2;
+}
+
+.Signup button:hover {
+  background-color: #5F40B2;
+  cursor: pointer;
+}

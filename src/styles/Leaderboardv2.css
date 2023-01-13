@@ -1,0 +1,53 @@
+.Leaderboard {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.Leaderboard h1 {
+  font-size: 3rem;
+  margin-bottom: 2rem;
+}
+
+.Leaderboard-table {
+  width: 90%;
+  border-collapse: collapse;
+  margin-top: 1rem;
+}
+
+.Leaderboard-table thead {
+  background-color: #f2f2f2;
+}
+
+.Leaderboard-table th,
+.Leaderboard-table td {
+  padding: 1rem;
+  text-align: left;
+  border-bottom: 1px solid #ddd;
+}
+
+.Leaderboard-table th {
+  font-weight: bold;
+}
+
+.Leaderboard-table a {
+  color: #333;
+  text-decoration: none;
+}
+
+@media (max-width: 768px) {
+  .Leaderboard {
+      width: 100%;
+      flex-wrap: wrap;
+  }
+
+  .Leaderboard-table {
+      width: 100%;
+  }
+
+  .Leaderboard-table th,
+  .Leaderboard-table td {
+      padding: 0.5rem;
+  }
+}

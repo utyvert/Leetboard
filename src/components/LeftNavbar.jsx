@@ -5,13 +5,17 @@ import Profile from '../pages/Profile';
 import '../styles/LeftNavbar.css';
 
 
-export default function LeftNavbar() {
+export default function LeftNavbar(props) {
+
+  const { currentUsername } = props;
+
   return (
     <div className="LeftNavbar">
       <h1> <a href="/leaderboard">Leetboard</a></h1>
       <div className="links">
         <Link to="/leaderboard">Leaderboard</Link>
-        <Link to="/profile">Your Profile</Link>
+        <Link to={`/user/${currentUsername}`}>Your Profile</Link>
+        <Link to="/signup">Link your account</Link>
       </div>
     </div>
   )

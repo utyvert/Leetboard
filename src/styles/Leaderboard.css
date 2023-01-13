@@ -16,6 +16,11 @@
   align-items: center;
 }
 
+.Leaderboard a {
+  text-decoration: none;
+  color: #5F40B2;
+}
+
 table {
   width: 100%;
   border-collapse: collapse;
